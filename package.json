@@ -4,7 +4,7 @@
   "description": "Get TypeScript compiler options and tsconfig file",
   "type": "module",
   "main": "dist/index.cjs",
-  "module": "dist/index.js",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.cts",
   "exports": {
     ".": {
@@ -13,8 +13,8 @@
         "default": "./dist/index.cjs"
       },
       "import": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
       }
     }
   },
@@ -26,7 +26,10 @@
     "url": "git+https://github.com/suseejs/tsconfig.git"
   },
   "keywords": [
-    "TypeScript"
+    "TypeScript",
+    "Susee",
+    "susee",
+    "suseejs"
   ],
   "author": {
     "name": "Pho Thin Mg",
@@ -40,7 +43,6 @@
   "homepage": "https://github.com/suseejs/tsconfig#readme",
   "dependencies": {
     "@suseejs/tcolor": "^0.1.0",
-    "@suseejs/utils": "^0.1.2",
     "typescript": "^5.9.3"
   },
   "files": [

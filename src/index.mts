@@ -1,6 +1,6 @@
 import ts from "typescript";
-import utils from "@suseejs/utils";
 import tcolor from "@suseejs/tcolor";
+import path from "node:path";
 
 const undefinedOptions = {
   allowArbitraryExtensions: undefined,
@@ -171,7 +171,7 @@ class TsConfig {
       : ts.findConfigFile(ts.sys.getCurrentDirectory(), ts.sys.fileExists);
     if (config_path) {
       const config = ts.readConfigFile(config_path, ts.sys.readFile);
-      const basePath = utils.dirname(config_path);
+      const basePath = path.dirname(config_path);
       const parsed = ts.parseJsonConfigFileContent(
         config.config,
         ts.sys,
@@ -232,7 +232,7 @@ class TsConfig {
    *   noImplicitAny: true,
    * });
    */
-  public addCompilerOptions(options: ts.CompilerOptions) {
+  public addCompilerOptions(options: ts.CompilerOptions): this {
     for (const key of Object.keys(options)) {
       if (!(key in this._options)) {
         this._options[key] = options[key];
